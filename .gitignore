@@ -6,5 +6,4 @@ Homestead.json
 /.buildpath
 /.env.example
 /.project
-/.settings/org.eclipse.php.core.prefs
-/.settings
+/.settings/
