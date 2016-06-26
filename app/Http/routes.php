@@ -12,51 +12,22 @@
 |
 */
 
+// Authentication Routes...
+Route::get ('auth/login',  'Auth\AuthController@getLogin');
+Route::post('auth/login',  'Auth\AuthController@postLogin');
+Route::get ('auth/logout', 'Auth\AuthController@logout');
+
+// Registration Routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::get('auth/register', 'Auth\AuthController@postRegister');
+
+
 Route::get('/', function () 
 				{
 				    return view('welcome');
 				}
 		  );
 
-// Display All Tasks
-Route::get('/allTasks', function()
-						{
-							$tasks = Task::orderBy('created_at', 'asc')->get();
-
-							return view('tasks', compact('tasks'));
-						}
-		 );
-
-Route::post('/tasks', function(Request $request)
-				      {
-					    $validator = Validator::make($request->all(),
-					   								 ['name' => 'required|max:255']
-					   							    );
-					   
-					    if( $validator->fails() )
-					    {
-					       return redirect('/allTasks')->withInput()->withErrors($validator);
-					    }
-				   	   
-					    // Create the task
-					    $task = new Task;
-					    $task->name = $request->name;
-					    $task->save();
-
-					    return redirect('/allTasks');
-				      }
-		   );
-
-// Delete an Existing Task
-Route::get('/task/{id}', function()
-					     {
-						     echo 'deleting an existing task';
-					     }
-		  );
-
-Route::delete('/task/{id}', function ($id)
-							{
-								Task::findOrFail($id)->delete();
-								return redirect('/allTasks');
-							}
-			);
+Route::get('/tasks', 'TasksController@index');
+Route::post('/tasks', 'TasksController@store');
+Route::delete('/tasks/{task}', 'TasksController@destroy');

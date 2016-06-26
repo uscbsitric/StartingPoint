@@ -195,6 +195,8 @@ trait AuthenticatesUsers
      */
     public function loginUsername()
     {
+    	$result = property_exists($this, 'username') ? $this->username : 'email';
+
         return property_exists($this, 'username') ? $this->username : 'email';
     }
 

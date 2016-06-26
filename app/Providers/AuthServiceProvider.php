@@ -12,9 +12,9 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
-    ];
+    protected $policies = ['App\Model' => 'App\Policies\ModelPolicy',
+    					   'App\Task'  => 'App\Policies\TaskPolicy'  // telling Laravel that our Task model corresponds to the TaskPolicy
+    					  ];
 
     /**
      * Register any application authentication / authorization services.
