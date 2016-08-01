@@ -40,9 +40,19 @@ class TasksController extends Controller
     	$result = $this->authorize('destroy', // name of the policy method we wish to call 
     							   $task   // the model instance that is our current concern
     							  );
-    	
     	$task->delete();
-    	
+
     	return redirect('/tasks');
+    }
+    
+    public function test()
+    {
+    	return 'This is the taskTest view';
+    }
+    
+    public function test1()
+    {
+    	dd( route('profile') );
+    	return 'This is the test1 view, Route Group & Named Routes Example';
     }
 }

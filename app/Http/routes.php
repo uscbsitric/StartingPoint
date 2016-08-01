@@ -31,3 +31,24 @@ Route::get('/', function ()
 Route::get('/tasks', 'TasksController@index');
 Route::post('/tasks', 'TasksController@store');
 Route::delete('/tasks/{task}', 'TasksController@destroy');
+
+Route::get('/taskTest', 'TasksController@test')->name('taskTest'); // named Route
+
+
+Route::group(['as' => 'admin::'],
+			 function ()
+			 {
+				Route::get('dashboard', ['as' => 'dashboard', 
+										 function ()
+										 {
+										  // Route named "admin::dashboard"
+			 							 }
+										]
+						  );
+				
+				Route::get('dashboard1', 'TasksController@test1')->name('taskTest');
+			}
+		   );
+
+// Service Provider demo route
+Route::resource('demo', 'DemoController');
