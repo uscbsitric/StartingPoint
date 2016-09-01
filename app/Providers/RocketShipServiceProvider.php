@@ -16,7 +16,7 @@ class RocketShipServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot() // This method is called after all other service providers have been registered, meaning you have access to all other services that have been registered by the framework.
     {
         //
     }
@@ -26,7 +26,7 @@ class RocketShipServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register() // Only bind things to the Service Container.
     {
     	/*
     	 * Register a binding with the container.
@@ -48,8 +48,13 @@ class RocketShipServiceProvider extends ServiceProvider
     /**
      * Get the services provided by the provider
      */
-    public function provides()
-    {
+    public function provides() // This is needed when setting the $defer property to true.
+    {						   // returns the service container bindings that the provider registers:
     	return ['App\Helpers\Contracts\RocketShipContract'];
+    }
+    
+    public function thisIsATest()
+    {
+    	echo "this is a test";
     }
 }

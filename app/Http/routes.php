@@ -42,10 +42,12 @@ Route::group(['as' => 'admin::'],
 										 function ()
 										 {
 										  // Route named "admin::dashboard"
+										  // redirecting to a named route
+										  return redirect()->route("admin::taskTest"); // to access:  http://startingpoint/dashboard
 			 							 }
 										]
 						  );
-				
+
 				Route::get('dashboard1', 'TasksController@test1')->name('taskTest');
 			}
 		   );
