@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Helpers\Contracts\RocketShipContract;
+use App\Providers\RocketShipServiceProvider;
 
 class DemoController extends Controller
 {

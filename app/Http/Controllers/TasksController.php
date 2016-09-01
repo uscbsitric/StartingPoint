@@ -52,7 +52,6 @@ class TasksController extends Controller
     
     public function test1()
     {
-    	dd( route('profile') );
     	return 'This is the test1 view, Route Group & Named Routes Example';
     }
 }
