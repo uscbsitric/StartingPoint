@@ -54,3 +54,13 @@ Route::group(['as' => 'admin::'],
 
 // Service Provider demo route
 Route::resource('demo', 'DemoController');
+
+// API Token Test
+Route::group(['as' => 'apitokentestgroup::',
+			  'middleware' => '[auth:api]', // using the 'auth' middleware, specifying the 'api' guard
+			 ],
+		     function()
+		     {
+	           Route::resource('apitokentest', 'ApitokentestController');
+             }
+		    );
