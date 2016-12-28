@@ -40,4 +40,6 @@ class ApitokentestController extends Controller
 	{
 		return response()->json(['result' => 'This is the result from the EDIT function of the ApitokentestController']);
 	}
+	
+	
 }

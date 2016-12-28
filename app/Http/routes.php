@@ -57,10 +57,18 @@ Route::resource('demo', 'DemoController');
 
 // API Token Test
 Route::group(['as' => 'apitokentestgroup::',
-			  'middleware' => '[auth:api]', // using the 'auth' middleware, specifying the 'api' guard
+			  //'middleware' => '[auth:api, cors]', // using the 'auth' middleware, specifying the 'api' guard
+			  'middleware' => '[auth, cors]',
 			 ],
 		     function()
 		     {
 	           Route::resource('apitokentest', 'ApitokentestController');
+	           Route::post('register', 'ApitokentestController@register');
+	           Route::post('login', 'ApitokentestController@login');
              }
 		    );
+
+
+
+
+
