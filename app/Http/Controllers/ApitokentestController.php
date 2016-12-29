@@ -41,5 +41,8 @@ class ApitokentestController extends Controller
 		return response()->json(['result' => 'This is the result from the EDIT function of the ApitokentestController']);
 	}
 	
-	
+	public function get_user_details()
+	{
+		return response()->json(['result' => 'This is the result from the get_user_details function of the ApitokentestController']);
+	}
 }

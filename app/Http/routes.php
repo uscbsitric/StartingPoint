@@ -65,6 +65,13 @@ Route::group(['as' => 'apitokentestgroup::',
 	           Route::resource('apitokentest', 'ApitokentestController');
 	           Route::post('register', 'ApitokentestController@register');
 	           Route::post('login', 'ApitokentestController@login');
+	           
+	           Route::group(['middleware' => 'jwt-auth'],
+	           				function()
+	           				{
+	           					Route::post('get_user_details', 'ApitokentestController@get_user_details');
+	           				}
+	           			   );
              }
 		    );
 
