@@ -59,10 +59,10 @@ Route::resource('demo', 'DemoController');
 Route::group(['as' => 'apitokentestgroup::',
 			  //'middleware' => '[auth:api, cors]', // using the 'auth' middleware, specifying the 'api' guard
 			  'middleware' => '[auth, cors]',
+			  'prefix' => 'api',
 			 ],
 		     function()
 		     {
-	           Route::resource('apitokentest', 'ApitokentestController');
 	           Route::post('register', 'ApitokentestController@register');
 	           Route::post('login', 'ApitokentestController@login');
 	           
@@ -70,6 +70,7 @@ Route::group(['as' => 'apitokentestgroup::',
 	           				function()
 	           				{
 	           					Route::post('get_user_details', 'ApitokentestController@get_user_details');
+	           					Route::resource('apitokentest', 'ApitokentestController');
 	           				}
 	           			   );
              }
