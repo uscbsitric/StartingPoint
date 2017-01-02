@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use Hash;
+use JWTAuth;
 
 class ApitokentestController extends Controller
 {
@@ -50,7 +53,8 @@ class ApitokentestController extends Controller
 	{
 		$input = $request->all();
 		$input['password'] = Hash::make($input['password']);
-		User::create($input);
+		$result = User::create($input);
+
 		return response()->json(['result'=>true]);
 	}
 	

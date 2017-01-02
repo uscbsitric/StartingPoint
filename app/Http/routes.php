@@ -11,7 +11,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+/**********************************************************************************************************************************************************************************
 // Authentication Routes...
 Route::get ('auth/login',  'Auth\AuthController@getLogin');
 Route::post('auth/login',  'Auth\AuthController@postLogin');
@@ -54,16 +54,26 @@ Route::group(['as' => 'admin::'],
 
 // Service Provider demo route
 Route::resource('demo', 'DemoController');
+**********************************************************************************************************************************************************************************/
 
 // API Token Test
 Route::group(['as' => 'apitokentestgroup::',
 			  //'middleware' => '[auth:api, cors]', // using the 'auth' middleware, specifying the 'api' guard
-			  'middleware' => ['auth', 'cors'],
+			  'middleware' => ['api', 'cors'],
 			  'prefix' => 'api',
 			 ],
 		     function()
 		     {
-	           Route::post('register', 'ApitokentestController@register');
+	            Route::post('register', 'ApitokentestController@register');
+	            
+	            /***
+		     	Route::get('register',
+		     			    function()
+		     			    {
+		     		          exit('inside register of routes.php');
+		     	            }
+		     			   );
+		       ***/
 	           Route::post('login', 'ApitokentestController@login');
 	           
 	           Route::group(['middleware' => 'jwt-auth'],
