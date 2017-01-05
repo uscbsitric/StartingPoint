@@ -46,7 +46,11 @@ class ApitokentestController extends Controller
 	
 	public function get_user_details()
 	{
-		return response()->json(['result' => 'This is the result from the get_user_details function of the ApitokentestController']);
+		$input = $request->all();
+		$user = JWTAuth::toUser($input['token']);
+		return response()->json(['result' => $user]);
+
+		//return response()->json(['result' => 'This is the result from the get_user_details function of the ApitokentestController']);
 	}
 	
 	public function register(Request $request)
