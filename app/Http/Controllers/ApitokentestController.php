@@ -57,6 +57,8 @@ class ApitokentestController extends Controller
 	{
 		$input = $request->all();
 		$input['password'] = Hash::make($input['password']);
+		$input['role'] = 2; // default role code
+		
 		$result = User::create($input);
 
 		return response()->json(['result'=>true]);
