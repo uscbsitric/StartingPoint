@@ -161,7 +161,7 @@ return [
         * Custom Providers
         */
     	'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
-    	'Zizaco\Entrust\EntrustServiceProvider::class',
+    	Zizaco\Entrust\EntrustServiceProvider::class,
     ],
 
     /*
