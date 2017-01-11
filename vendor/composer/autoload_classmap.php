@@ -9,6 +9,7 @@ return array(
     'AddPermissionToRole' => $baseDir . '/database/migrations/2017_01_11_065624_add_permission_to_role.php',
     'AddRememberTokenToUsersTable' => $baseDir . '/database/migrations/2016_12_22_074738_add_remember_token_to_users_table.php',
     'AddRoleToUsersTable' => $baseDir . '/database/migrations/2017_01_08_014211_add_role_to_users_table.php',
+    'AttachRoleToUser1' => $baseDir . '/database/migrations/2017_01_11_073455_attach_role_to_user1.php',
     'CreateInitialPermission' => $baseDir . '/database/migrations/2017_01_11_035815_create_initial_permission.php',
     'CreateInitialRoles' => $baseDir . '/database/migrations/2017_01_11_031307_create_initial_roles.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
