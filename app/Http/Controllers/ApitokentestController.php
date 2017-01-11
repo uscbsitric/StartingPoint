@@ -17,13 +17,17 @@ class ApitokentestController extends Controller
 		$input = $request->all();
 		$user = JWTAuth::toUser($input['token']);
 		
+		if($user->can('can-do-everything'))
+		{
+			return response()->json(['result' => 'This is the result from the INDEX function of the ApitokentestController',
+									'data1' => $input['data1'],
+									'data2' => $input['data2'],
+									'data3' => $input['data3'],
+									'data4' => $input['data4'],
+							]);
+		}
 		
-
-		return response()->json(['result' => 'This is the result from the INDEX function of the ApitokentestController',
-								 'data1' => $input['data1'],
-								 'data2' => $input['data2'],
-								 'data3' => $input['data3'],
-								 'data4' => $input['data4'],
+		return response()->json(['result' => 'This is the result from the INDEX function of the ApitokentestController, ACCCESS DENIED',
 								]);
 	}
 	
