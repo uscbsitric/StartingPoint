@@ -315,6 +315,7 @@ class ComposerStaticInitc5500659cd8ade3119ab30265c6282c4
     );
 
     public static $classMap = array (
+        'AddPermissionToRole' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_065624_add_permission_to_role.php',
         'AddRememberTokenToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_22_074738_add_remember_token_to_users_table.php',
         'AddRoleToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_08_014211_add_role_to_users_table.php',
         'CreateInitialPermission' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_035815_create_initial_permission.php',
