@@ -6,12 +6,25 @@ use Illuminate\Http\Request;
 use App\User;
 use Hash;
 use JWTAuth;
+use App\Role;
+use App\Permission;
 
 class ApitokentestController extends Controller
 {
-	public function index()
+	public function index( Request $request
+						 )
 	{
-		return response()->json(['result' => 'This is the result from the INDEX function of the ApitokentestController']);
+		$input = $request->all();
+		$user = JWTAuth::toUser($input['token']);
+		
+		
+
+		return response()->json(['result' => 'This is the result from the INDEX function of the ApitokentestController',
+								 'data1' => $input['data1'],
+								 'data2' => $input['data2'],
+								 'data3' => $input['data3'],
+								 'data4' => $input['data4'],
+								]);
 	}
 	
 	public function store()
@@ -58,8 +71,12 @@ class ApitokentestController extends Controller
 		$input = $request->all();
 		$input['password'] = Hash::make($input['password']);
 		$input['role'] = 2; // default role code
-		
+
 		$result = User::create($input);
+
+		// assign a role and permission set to the newly created user
+		
+		// assign a role and permission set to the newly created user
 
 		return response()->json(['result'=>true]);
 	}
