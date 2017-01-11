@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Role;
 
 class CreateInitialRoles extends Migration
 {
@@ -12,7 +13,11 @@ class CreateInitialRoles extends Migration
      */
     public function up()
     {
-        //
+        $ninjaRole = new Role();
+        $ninjaRole->name = 'Ninja';
+        $ninjaRole->display_name = 'The PHP Ninja';
+        $ninjaRole->description = 'The PHP Ninja';
+        $ninjaRole->save();
     }
 
     /**
