@@ -94,7 +94,9 @@ class ApitokentestController extends Controller
 			return response()->json(['result' => 'wrong email or password.']);
 		}
 		return response()->json(['result' => $token]);
+		
+		$testVariable = 'this code does nothing at all';
 	}
 	
-	// test changes
+
 }
