@@ -86,7 +86,9 @@ Route::group(['as' => 'apitokentestgroup::',
              }
 		    );
 
-
-
-
-
+Route::get('/', 
+		   function ()
+		   {
+		     return view('welcome');
+		   }
+		  );
