@@ -94,3 +94,7 @@ Route::get('/',
 		     return view('welcome');
 		   }
 		  );
+
+Route::get('/eventsTesting',
+	       'EventsTestController@eventtest'
+		  );

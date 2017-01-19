@@ -26,6 +26,8 @@ class TestListener1
      */
     public function handle(TestEvent1 $event)
     {
-        //
+    	// Access the userModel using $event->user...
+    	$user = $event->user;
+        $testVariable1 = 'test value1';
     }
 }
