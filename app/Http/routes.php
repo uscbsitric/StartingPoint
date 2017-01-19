@@ -89,6 +89,8 @@ Route::group(['as' => 'apitokentestgroup::',
 Route::get('/', 
 		   function ()
 		   {
+			 $testVariable1 = 'testValue1';
+			 $testVariable2 = 'testValue2';
 		     return view('welcome');
 		   }
 		  );
