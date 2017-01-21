@@ -98,3 +98,7 @@ Route::get('/',
 Route::get('/eventsTesting',
 	       'EventsTestController@eventtest'
 		  );
+
+Route::get('/jobEventTest',
+		   'QueueTestController@jobEventTest'
+		  );
