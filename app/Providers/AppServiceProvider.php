@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Queue;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Queue\Events\JobProcessed;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+    	Queue::after(function (JobProcessed $event)
+			    	 {
+			    	   $connectionName = $event->connectionName;
+			    	   $job = $event->job;
+			    	   $data = $event->data;
+			    	   $testVariable = 'test Value1';
+			    	 }
+    				);
     }
 
     /**
