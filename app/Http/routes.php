@@ -102,3 +102,8 @@ Route::get('/eventsTesting',
 Route::get('/jobEventTest',
 		   'QueueTestController@jobEventTest'
 		  );
+
+
+Route::resource('frederickTest', 'FrederickController', ['parameters' => ['frederickTest' => 'admin_user']
+                                                    ]
+		       );
