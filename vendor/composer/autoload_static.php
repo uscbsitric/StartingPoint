@@ -321,6 +321,7 @@ class ComposerStaticInitc5500659cd8ade3119ab30265c6282c4
         'AttachRoleToUser1' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_073455_attach_role_to_user1.php',
         'CreateInitialPermission' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_035815_create_initial_permission.php',
         'CreateInitialRoles' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_031307_create_initial_roles.php',
+        'CreateOrdersTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_08_024031_create_orders_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateTasksTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_17_043744_create_tasks_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
