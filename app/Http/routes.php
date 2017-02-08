@@ -1,6 +1,7 @@
 <?php
 	use App\Task;
 	use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -107,3 +108,5 @@ Route::get('/jobEventTest',
 Route::resource('frederickTest', 'FrederickController', ['names' => ['create' => 'frederick.build']
                                                         ]
 		       );
+
+Route::get('registryPatternTest', 'FrederickController@pay');

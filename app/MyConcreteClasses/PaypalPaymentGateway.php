@@ -12,7 +12,7 @@ class PaypalPaymentGateway implements PaymentGateway
 		$this->apiKey = $apiKey;
 	}
 	
-	public function pay(User $payee, Order $order)
+	public function pay()
 	{
 		echo "<pre>";
 		echo 'this is the pay function of PayPalPaymentGateway';
