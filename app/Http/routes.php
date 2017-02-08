@@ -104,6 +104,6 @@ Route::get('/jobEventTest',
 		  );
 
 
-Route::resource('frederickTest', 'FrederickController', ['parameters' => ['frederickTest' => 'admin_user']
-                                                    ]
+Route::resource('frederickTest', 'FrederickController', ['names' => ['create' => 'frederick.build']
+                                                        ]
 		       );
