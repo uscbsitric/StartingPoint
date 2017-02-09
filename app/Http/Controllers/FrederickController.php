@@ -22,12 +22,9 @@ class FrederickController extends Controller
 	function pay(Request $request)
 	{
 		$input = $request['input'];
-		
-		$result = $this->gatewayRegistry->get( $input );
-		
-		echo "<pre>";
-		var_dump($result);
-		
+
+		$this->gatewayRegistry->get( $input )->pay();
+
 		return 'this is the pay function of the FrederickController';
 	}
 }
