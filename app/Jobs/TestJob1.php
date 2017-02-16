@@ -19,15 +19,16 @@ class TestJob1 extends Job implements ShouldQueue
     use InteractsWithQueue, SerializesModels;
 
     protected $user;
-
+    protected $failFlag;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct(User $user1)
+    public function __construct(User $user1, $failFlag)
     {
         $this->user = $user1;
+        $this->failFlag = $failFlag;
     }
 
     /**
@@ -37,7 +38,14 @@ class TestJob1 extends Job implements ShouldQueue
      */
     public function handle()
     {
-        sleep(10);
-        $testVariable1 = 'test value 1';
+    	if( false == $this->failFlag )
+    	{
+    		sleep(20);
+    		$testVariable1 = 'test value 1';
+    	}
+        else
+        {
+        	throw new Exception('Test Job 1 Failed');
+        }
     }
 }

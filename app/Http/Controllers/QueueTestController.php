@@ -18,9 +18,13 @@ class QueueTestController extends Controller
 
        exit('jobEventTest function of QueueTestController.');
     }
-    
-    public function queueTest()
+
+    public function queueTest(Request $request)
     {
+      $input = $request->all();
+      
+      echo "<pre>";
+      var_dump($input);
       exit('this is the queueTest function() of the QueueTestController');
     }
 }

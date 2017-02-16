@@ -319,6 +319,7 @@ class ComposerStaticInitc5500659cd8ade3119ab30265c6282c4
         'AddRememberTokenToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_22_074738_add_remember_token_to_users_table.php',
         'AddRoleToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_08_014211_add_role_to_users_table.php',
         'AttachRoleToUser1' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_073455_attach_role_to_user1.php',
+        'CreateFailedJobsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_16_074515_create_failed_jobs_table.php',
         'CreateInitialPermission' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_035815_create_initial_permission.php',
         'CreateInitialRoles' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_031307_create_initial_roles.php',
         'CreateJobsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_16_071500_create_jobs_table.php',
