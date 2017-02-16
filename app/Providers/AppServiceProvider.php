@@ -21,6 +21,10 @@ class AppServiceProvider extends ServiceProvider
 			    	   $job = $event->job;
 			    	   $data = $event->data;
 			    	   $testVariable = 'test Value1';
+			    	   
+			    	   echo "<pre>";
+			    	   var_dump($connectionName);
+			    	   exit('frederick debugging here');
 			    	 }
     				);
     }

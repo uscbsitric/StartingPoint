@@ -22,9 +22,9 @@ class QueueTestController extends Controller
     public function queueTest(Request $request)
     {
       $input = $request->all();
-      
-      echo "<pre>";
-      var_dump($input);
+      $user = User::where('id', '=', 1)->first();
+
+      $this->dispatch( new TestJob1($user, $input['failFlag']));
       exit('this is the queueTest function() of the QueueTestController');
     }
 }

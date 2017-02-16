@@ -38,7 +38,7 @@ class TestJob1 extends Job implements ShouldQueue
      */
     public function handle()
     {
-    	if( false == $this->failFlag )
+    	if( 'false' == $this->failFlag )
     	{
     		sleep(20);
     		$testVariable1 = 'test value 1';
@@ -47,5 +47,16 @@ class TestJob1 extends Job implements ShouldQueue
         {
         	throw new Exception('Test Job 1 Failed');
         }
+    }
+
+    public function failed()
+    {
+    	$this->failFlag = 'false';
+
+    	if( 'false' == $this->failFlag )
+    	{
+    		sleep(20);
+    		$testVariable1 = 'test value 1';
+    	}
     }
 }
