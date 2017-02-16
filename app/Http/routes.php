@@ -104,6 +104,10 @@ Route::get('/jobEventTest',
 		   'QueueTestController@jobEventTest'
 		  );
 
+Route::get('/queueTest',
+		   'QueueTestController@queueTest'
+		  );
+
 
 Route::resource('frederickTest', 'FrederickController', ['names' => ['create' => 'frederick.build']
                                                         ]

@@ -12,6 +12,7 @@ return array(
     'AttachRoleToUser1' => $baseDir . '/database/migrations/2017_01_11_073455_attach_role_to_user1.php',
     'CreateInitialPermission' => $baseDir . '/database/migrations/2017_01_11_035815_create_initial_permission.php',
     'CreateInitialRoles' => $baseDir . '/database/migrations/2017_01_11_031307_create_initial_roles.php',
+    'CreateJobsTable' => $baseDir . '/database/migrations/2017_02_16_071500_create_jobs_table.php',
     'CreateOrdersTable' => $baseDir . '/database/migrations/2017_02_08_024031_create_orders_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateTasksTable' => $baseDir . '/database/migrations/2016_06_17_043744_create_tasks_table.php',

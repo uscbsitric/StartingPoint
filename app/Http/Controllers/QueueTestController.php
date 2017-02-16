@@ -18,4 +18,9 @@ class QueueTestController extends Controller
 
        exit('jobEventTest function of QueueTestController.');
     }
+    
+    public function queueTest()
+    {
+      exit('this is the queueTest function() of the QueueTestController');
+    }
 }
