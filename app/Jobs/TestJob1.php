@@ -11,6 +11,7 @@ use Illuminate\Queue\SerializesModels;      // Because of the SerializesModels t
 
 use Illuminate\Queue\InteractsWithQueue;    // Traits with methods that let you interact with the queue
 use Illuminate\Contracts\Queue\ShouldQueue; // Indicating to Laravel that the job should be pushed onto the queue instead of run synchronously.
+use Exception;
 
 use App\User;
 
@@ -38,25 +39,32 @@ class TestJob1 extends Job implements ShouldQueue
      */
     public function handle()
     {
+    	/*
+    	 * Try- Catch and proper handling of possible exception occurence
+    	 * Design the job to succeed, because some failures are not recoverable for us
+    	 */
+
     	if( 'false' == $this->failFlag )
     	{
-    		sleep(20);
+    		sleep(2);
     		$testVariable1 = 'test value 1';
     	}
         else
         {
-        	throw new Exception('Test Job 1 Failed');
+        	try
+        	{
+        	  throw new Exception('Test Job 1 Failed');
+        	}
+        	catch(Exception $e)
+        	{
+        		sleep(5);
+        		$e->getMessage();
+        	}
         }
     }
-
+    
     public function failed()
     {
-    	$this->failFlag = 'false';
-
-    	if( 'false' == $this->failFlag )
-    	{
-    		sleep(20);
-    		$testVariable1 = 'test value 1';
-    	}
+    	// send report
     }
 }

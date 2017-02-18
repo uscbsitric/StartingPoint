@@ -108,6 +108,13 @@ Route::get('/queueTest',
 		   'QueueTestController@queueTest'
 		  );
 
+Route::get('/queueTest2',
+		function()
+		{
+			exit('this is a test route');
+}
+);
+
 
 Route::resource('frederickTest', 'FrederickController', ['names' => ['create' => 'frederick.build']
                                                         ]

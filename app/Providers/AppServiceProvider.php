@@ -5,6 +5,7 @@ namespace App\Providers;
 use Queue;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Queue\Events\JobProcessed;
+use Illuminate\Queue\Events\JobFailed;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,12 +22,14 @@ class AppServiceProvider extends ServiceProvider
 			    	   $job = $event->job;
 			    	   $data = $event->data;
 			    	   $testVariable = 'test Value1';
-			    	   
-			    	   echo "<pre>";
-			    	   var_dump($connectionName);
-			    	   exit('frederick debugging here');
 			    	 }
     				);
+    	
+    	Queue::failing( function(JobFailed $event)
+    	                {
+                          $testVariable = 'test value';
+                        } 
+    	              );
     }
 
     /**
