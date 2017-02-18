@@ -7,6 +7,7 @@ use App\Http\Requests;
 use Event;
 use App\User;
 use App\Events\TestEvent1;
+use App\Events\TestEvent2;
 
 class EventsTestController extends Controller
 {
@@ -15,6 +16,7 @@ class EventsTestController extends Controller
     	$user = User::where('id', '=', 1)->first();
 
     	Event::fire(new TestEvent1($user));
+    	Event::fire(new TestEvent2($user));
 
     	echo "<br>";
     	exit('Testing Event Firing');
