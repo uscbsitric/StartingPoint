@@ -5,7 +5,6 @@ namespace App\Events;
 use App\Events\Event;
 use App\User;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class TestEvent2 extends Event
 {

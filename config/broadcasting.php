@@ -33,9 +33,9 @@ return [
             'key' => env('PUSHER_KEY'),
             'secret' => env('PUSHER_SECRET'),
             'app_id' => env('PUSHER_APP_ID'),
-            'options' => [
-                //
-            ],
+            'options' => ['cluster' => 'ap1',
+            		      'encrypted' => true
+                         ],
         ],
 
         'redis' => [

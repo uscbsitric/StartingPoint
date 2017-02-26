@@ -15,8 +15,10 @@ class EventsTestController extends Controller
     {
     	$user = User::where('id', '=', 1)->first();
 
+    	// testing Laravel Events + Queue + Pusher + javascript based client
     	Event::fire(new TestEvent1($user));
-    	Event::fire(new TestEvent2($user));
+    	
+    	//Event::fire(new TestEvent2($user));
 
     	echo "<br>";
     	exit('Testing Event Firing');

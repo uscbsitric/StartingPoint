@@ -7,7 +7,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Contracts\Mail\Mailer;
 
-class TestListener1
+class TestListener1 implements ShouldQueue
 {
 	/**
 	 * Your event listeners may also type-hint any dependencies they need on their constructors. 
@@ -38,6 +38,11 @@ class TestListener1
     {
     	// Access the userModel using $event->user...
     	$user = $event->user;
+    	$id = $user->id;
+    	$name = $user->name;
+    	$email = $user->email;
+    	$role = $user->role;
+
         $testVariable1 = 'test value1';
     }
 }

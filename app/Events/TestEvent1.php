@@ -11,13 +11,15 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 // For example, our TestEvent1 recieves the Eloquent ORM object.
 // As you can see, this event class contains no logic.  It is simply a container for the User object
 // that was created.
-class TestEvent1 extends Event
+class TestEvent1 extends Event implements ShouldBroadcast
 {
     use SerializesModels;  // the SerializesModels trait used by the event will gracefully serialize any Eloquent models
                            // if the event will gracefully serialize any Eloquent models if the event object is serialized
                            // using PHPs serialize function.
 
-    public $currentUser;
+    public $user;
+    public $testVar1;
+    public $testVar2;
 
     /**
      * Create a new event instance.
@@ -28,6 +30,8 @@ class TestEvent1 extends Event
     {
         $this->user = $user;
         $testVariable = 'testValue';
+        $this->testVar1 = 'si Bertrand gwapo kaayu';
+        $this->testVar2 = 'si Freds ninja';
     }
 
     /**
@@ -37,6 +41,13 @@ class TestEvent1 extends Event
      */
     public function broadcastOn()
     {
-        return [];
+    	$channels = array('my-channel');
+        return $channels;
+    }
+    
+    public function broadcastAs()
+    {
+    	$eventName = 'my-event';
+    	return $eventName;
     }
 }
