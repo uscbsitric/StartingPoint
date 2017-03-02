@@ -8,6 +8,7 @@ use Event;
 use App\User;
 use App\Events\TestEvent1;
 use App\Events\TestEvent2;
+use App\Events\TestEvent3;
 
 class EventsTestController extends Controller
 {
@@ -18,9 +19,15 @@ class EventsTestController extends Controller
     	// testing Laravel Events + Queue + Pusher + javascript based client
     	Event::fire(new TestEvent1($user));
     	
-    	//Event::fire(new TestEvent2($user));
+    	Event::fire(new TestEvent2($user));
 
     	echo "<br>";
     	exit('Testing Event Firing');
+    }
+    
+    public function simpleEventTest()
+    {
+    	$user = User::where('id', '=', 1)->first();
+    	Event::fire(new TestEvent3($user));
     }
 }

@@ -15,6 +15,7 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = ['App\Events\TestEvent1' => ['App\Listeners\TestListener1',
     												 'App\Listeners\TestListener2'
         										    ],
+    		             'App\Events\TestEvent3' => ['App\Listeners\TestListener3']
     					];
     
     protected $subscribe = ['App\Listeners\EventSubscriber1'];
